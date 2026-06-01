@@ -39,8 +39,7 @@
       :root {
         --bg:        #0f0f0d;
         --surface:   #1a1a17;
-        --surface2:  #222220;
-        --border:    rgba(255,255,255,0.08);
+        --surface2:  --border:    rgba(255,255,255,0.08);
         --border2:   rgba(255,255,255,0.14);
         --text:      #f0efe8;
         --text2:     #9a9890;
@@ -471,7 +470,6 @@
 </head>
 
 <body>
-  <!-- ══ Sidebar ══ -->
   <aside class="sidebar">
     <div class="sidebar-logo">
       <div class="logo-mark">📈 StockIL</div>
@@ -503,7 +501,6 @@
     </div>
   </aside>
 
-  <!-- ══ Main ══ -->
   <main class="main">
     <div class="page-header">
       <div>
@@ -520,7 +517,6 @@
       </div>
     </div>
 
-    <!-- Metrics -->
     <div class="metrics-grid" id="metricsGrid">
       <div class="metric-card">
         <div class="metric-label">שווי תיק</div>
@@ -544,7 +540,6 @@
       </div>
     </div>
 
-    <!-- Tabs -->
     <div class="tabs-bar">
       <button class="tab-btn active" data-tab="opportunities" onclick="showTab('opportunities', this)"><i class="ti ti-flame"></i> הזדמנויות</button>
       <button class="tab-btn" data-tab="portfolio" onclick="showTab('portfolio', this)"><i class="ti ti-briefcase"></i> תיק שלי</button>
@@ -553,18 +548,11 @@
       <button class="tab-btn" data-tab="settings" onclick="showTab('settings', this)"><i class="ti ti-settings"></i> הגדרות</button>
     </div>
 
-    <!-- ══ TAB: Opportunities ══ -->
     <div id="tab-opportunities" class="tab-panel active fade-in">
       <div class="two-col">
-        <!-- Hot from News -->
         <div class="card">
           <div class="card-title"><i class="ti ti-news"></i> עיתונות כלכלית — מניות חמות</div>
           <div id="newsStocks">
-            <div class="stock-row">
-              <span class="skeleton" style="width:50px;height:16px;"></span>
-              <span class="skeleton" style="width:80px;height:14px;"></span>
-              <span class="skeleton" style="width:60px;height:14px;margin-right:auto;"></span>
-            </div>
             <div class="stock-row">
               <span class="skeleton" style="width:50px;height:16px;"></span>
               <span class="skeleton" style="width:80px;height:14px;"></span>
@@ -578,7 +566,6 @@
           </div>
         </div>
 
-        <!-- Undervalued -->
         <div class="card">
           <div class="card-title"><i class="ti ti-trending-up"></i> Undervalued — לפי מדדים</div>
           <div id="undervaluedStocks">
@@ -594,7 +581,6 @@
           </div>
         </div>
 
-        <!-- Social -->
         <div class="card">
           <div class="card-title"><i class="ti ti-brand-twitter"></i> רשתות חברתיות — טרנדינג</div>
           <div id="socialStocks">
@@ -605,27 +591,6 @@
               <span class="stock-price">טוען...</span>
               <span class="stock-chg muted">—</span>
             </div>
-            <div class="stock-row">
-              <span class="ticker">RKLB</span>
-              <span class="co-name">Rocket Lab</span>
-              <span class="badge badge-social">X / Twitter</span>
-              <span class="stock-price">טוען...</span>
-              <span class="stock-chg muted">—</span>
-            </div>
-            <div class="stock-row">
-              <span class="ticker">SMCI</span>
-              <span class="co-name">Super Micro</span>
-              <span class="badge badge-social">StockTwits</span>
-              <span class="stock-price">טוען...</span>
-              <span class="stock-chg muted">—</span>
-            </div>
-            <div class="stock-row">
-              <span class="ticker">PLTR</span>
-              <span class="co-name">Palantir</span>
-              <span class="badge badge-social">Reddit ▲</span>
-              <span class="stock-price">טוען...</span>
-              <span class="stock-chg muted">—</span>
-            </div>
           </div>
           <div style="margin-top:14px;display:flex;gap:8px;">
             <a href="https://www.reddit.com/r/wallstreetbets/" target="_blank" class="btn" style="flex:1;justify-content:center;font-size:12px;">r/WSB</a>
@@ -633,7 +598,6 @@
           </div>
         </div>
 
-        <!-- Key People -->
         <div class="card">
           <div class="card-title"><i class="ti ti-speakerphone"></i> אנשי מפתח — מעקב</div>
           <div class="signal-row">
@@ -644,27 +608,10 @@
             </div>
             <a href="https://truthsocial.com/@realDonaldTrump" target="_blank" class="btn" style="padding:5px 10px;font-size:11.5px;">פתח</a>
           </div>
-          <div class="signal-row">
-            <div style="width:34px;height:34px;border-radius:50%;background:var(--green-bg);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--green);flex-shrink:0;">JH</div>
-            <div style="flex:1;">
-              <div style="font-size:13px;font-weight:500;">Jensen Huang — Nvidia</div>
-              <div style="font-size:12px;color:var(--text2);margin-top:2px;">נאומי GTC · הכרזות מוצר · NVDA</div>
-            </div>
-            <a href="https://www.youtube.com/@NVIDIADeveloper" target="_blank" class="btn" style="padding:5px 10px;font-size:11.5px;">YouTube</a>
-          </div>
-          <div class="signal-row">
-            <div style="width:34px;height:34px;border-radius:50%;background:var(--amber-bg);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--amber);flex-shrink:0;">EM</div>
-            <div style="flex:1;">
-              <div style="font-size:13px;font-weight:500;">Elon Musk</div>
-              <div style="font-size:12px;color:var(--text2);margin-top:2px;">TSLA · xAI · SpaceX · X</div>
-            </div>
-            <a href="https://x.com/elonmusk" target="_blank" class="btn" style="padding:5px 10px;font-size:11.5px;">X</a>
-          </div>
         </div>
       </div>
     </div>
 
-    <!-- ══ TAB: Portfolio ══ -->
     <div id="tab-portfolio" class="tab-panel">
       <div class="card fade-in">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
@@ -686,59 +633,21 @@
       </div>
     </div>
 
-    <!-- ══ TAB: Signals ══ -->
     <div id="tab-signals" class="tab-panel">
       <div class="card fade-in">
         <div class="card-title"><i class="ti ti-bell"></i> סיגנלים אחרונים</div>
         <div id="signalsFeed">
           <div class="signal-row">
             <span class="signal-src badge-hot">עיתונות</span>
-            <div class="signal-text">Yahoo Finance: <span class="tck">NVDA</span> שוברת שיאים לאחר שותפות עם Saudi Aramco לפרויקטי AI</div>
+            <div class="signal-text">Yahoo Finance: <span class="tck">NVDA</span> שוברת שיאים בשל פרויקטי AI</div>
             <span class="signal-time">לפני 2ש׳</span>
           </div>
-          <div class="signal-row">
-            <span class="signal-src badge-social">Reddit</span>
-            <div class="signal-text">WSB: <span class="tck">PLTR</span> exploding — DoD contract renewed + NATO deal confirmed</div>
-            <span class="signal-time">לפני 3ש׳</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-src badge-warn">Trump</span>
-            <div class="signal-text">Truth Social: "American steel will be the backbone" ← רלוונטי ל<span class="tck">X</span>, <span class="tck">NUE</span>, <span class="tck">CLF</span></div>
-            <span class="signal-time">לפני 5ש׳</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-src badge-val">ביצועים</span>
-            <div class="signal-text"><span class="tck">BABA</span> נסחרת ב-P/E של 9.2 — נמוך היסטורית. RSI ב-38, ייתכן bounce טכני</div>
-            <span class="signal-time">לפני 6ש׳</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-src badge-social">X/Twitter</span>
-            <div class="signal-text">Cathie Wood: "<span class="tck">RKLB</span> is the SpaceX of the public markets" — trending עם 45k likes</div>
-            <span class="signal-time">לפני 8ש׳</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-src badge-news">Jensen</span>
-            <div class="signal-text">נאום GTC: demand for Blackwell Ultra "is insane" — ספקיות <span class="tck">NVDA</span> נהנות: <span class="tck">FOXCONN</span>, <span class="tck">SMCI</span></div>
-            <span class="signal-time">אתמול</span>
-          </div>
-          <div class="signal-row">
-            <span class="signal-src badge-val">ביצועים</span>
-            <div class="signal-text"><span class="tck">INTC</span> — 52-week low. P/B פחות מ-1. ייתכן turnaround עם CEO חדש ותוכנית ייעול</div>
-            <span class="signal-time">אתמול</span>
-          </div>
-        </div>
-        <div style="margin-top:16px;display:flex;gap:8px;">
-          <a href="https://finance.yahoo.com/news/" target="_blank" class="btn" style="flex:1;justify-content:center;font-size:12.5px;"><i class="ti ti-external-link"></i> Yahoo Finance</a>
-          <a href="https://www.reddit.com/r/wallstreetbets/" target="_blank" class="btn" style="flex:1;justify-content:center;font-size:12.5px;"><i class="ti ti-brand-reddit"></i> Reddit WSB</a>
-          <a href="https://stocktwits.com/rankings/trending" target="_blank" class="btn" style="flex:1;justify-content:center;font-size:12.5px;"><i class="ti ti-trending-up"></i> StockTwits</a>
         </div>
       </div>
     </div>
 
-    <!-- ══ TAB: Analysis ══ -->
     <div id="tab-analysis" class="tab-panel">
       <div class="two-col fade-in">
-        <!-- Sector -->
         <div class="card">
           <div class="card-title"><i class="ti ti-chart-donut"></i> פיזור לפי סקטור</div>
           <div id="sectorBars">
@@ -747,7 +656,6 @@
           <div id="sectorAlert"></div>
         </div>
 
-        <!-- Risk -->
         <div class="card">
           <div class="card-title"><i class="ti ti-shield"></i> ציון סיכון תיק</div>
           <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:16px;">
@@ -760,43 +668,15 @@
               <div class="risk-track"><div class="risk-fill" id="rf-sector" style="width:0%;background:var(--green);"></div></div>
               <span class="risk-tag" id="rt-sector">—</span>
             </div>
-            <div class="risk-row">
-              <span class="risk-label">תנודתיות</span>
-              <div class="risk-track"><div class="risk-fill" id="rf-vol" style="width:0%;background:var(--green);"></div></div>
-              <span class="risk-tag" id="rt-vol">—</span>
-            </div>
-            <div class="risk-row">
-              <span class="risk-label">גיאוגרפי</span>
-              <div class="risk-track"><div class="risk-fill" id="rf-geo" style="width:0%;background:var(--green);"></div></div>
-              <span class="risk-tag" id="rt-geo">—</span>
-            </div>
-            <div class="risk-row">
-              <span class="risk-label">ריכוז מנייה</span>
-              <div class="risk-track"><div class="risk-fill" id="rf-conc" style="width:0%;background:var(--green);"></div></div>
-              <span class="risk-tag" id="rt-conc">—</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Recommendations -->
-      <div class="card fade-in" style="margin-top:14px;">
-        <div class="card-title"><i class="ti ti-bulb"></i> המלצות יומיות</div>
-        <div id="recommendations">
-          <div class="signal-row">
-            <i class="ti ti-info-circle" style="color:var(--text3);font-size:20px;"></i>
-            <div class="signal-text" style="color:var(--text3);">הכנס את תיק ההשקעות שלך בלשונית הגדרות כדי לקבל המלצות מותאמות אישית.</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ══ TAB: Settings ══ -->
     <div id="tab-settings" class="tab-panel">
       <div class="two-col fade-in">
         <div class="card">
           <div class="card-title"><i class="ti ti-key"></i> הגדרות API</div>
-
           <div class="settings-section">
             <div class="settings-title">Alpha Vantage API Key</div>
             <div class="form-group">
@@ -828,23 +708,16 @@
 
         <div class="card">
           <div class="card-title"><i class="ti ti-briefcase"></i> ניהול תיק ההשקעות</div>
-
           <div class="settings-section">
             <div class="settings-title">הוסף מנייה לתיק</div>
             <div style="display:flex;gap:8px;margin-bottom:8px;">
-              <input type="text" class="form-input" id="newTicker" placeholder="טיקר (NVDA)" style="flex:1;text-transform:uppercase;" />
+              <input type="text" class="form-input" id="newTicker" placeholder="טיקר (NVDA)" style="text-transform:uppercase;" />
               <input type="number" class="form-input" id="newQty" placeholder="כמות" style="width:90px;" />
             </div>
             <div style="display:flex;gap:8px;margin-bottom:8px;align-items:center;">
               <div style="display:flex;border:1px solid var(--border2);border-radius:var(--radius);overflow:hidden;flex-shrink:0;">
-                <button id="currBtn-ILS" onclick="setCostCurrency('ILS')"
-                  style="padding:8px 13px;font-size:12.5px;font-weight:500;border:none;cursor:pointer;transition:all .15s;font-family:inherit;background:var(--accent);color:#fff;">
-                  ₪ שקל
-                </button>
-                <button id="currBtn-USD" onclick="setCostCurrency('USD')"
-                  style="padding:8px 13px;font-size:12.5px;font-weight:500;border:none;cursor:pointer;transition:all .15s;font-family:inherit;background:var(--surface);color:var(--text2);">
-                  $ דולר
-                </button>
+                <button id="currBtn-ILS" onclick="setCostCurrency('ILS')" style="padding:8px 13px;font-size:12.5px;font-weight:500;border:none;cursor:pointer;background:var(--accent);color:#fff;">₪ שקל</button>
+                <button id="currBtn-USD" onclick="setCostCurrency('USD')" style="padding:8px 13px;font-size:12.5px;font-weight:500;border:none;cursor:pointer;background:var(--surface);color:var(--text2);">$ דולר</button>
               </div>
               <div style="position:relative;flex:1;">
                 <span id="costSymbol" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:13px;color:var(--text3);pointer-events:none;">₪</span>
@@ -873,29 +746,23 @@
               <span style="color:var(--text3);font-size:13px;">רשימת מעקב ריקה</span>
             </div>
           </div>
-
-          <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="saveSettings()">
-            <i class="ti ti-check"></i> שמור ורענן
-          </button>
         </div>
       </div>
     </div>
   </main>
 
   <script>
-  // ══════════════════════════════════════════
-  //  STATE
-  // ══════════════════════════════════════════
   let state = {
     apiKey: '',
     currency: 'ILS',
-    costCurrency: 'ILS', // currency selected when entering cost basis
-    holdings: [],        // { ticker, qty, costBasis, costCurrency }
-    watchlist: ['NVDA','TSLA','MSFT','AAPL','PLTR'],
-    quotes: {},          // ticker -> { price, change, changePct, high52, low52 }
-    usdToIls: 3.7,       // fallback exchange rate, updated on load
+    costCurrency: 'ILS', 
+    holdings: [],        
+    watchlist: ['NVDA','TSLA','MSFT'], // צמצום לחיסכון במכסה היומית
+    quotes: {},          
+    usdToIls: 3.7,       
     lastRefresh: null,
     portfolioChart: null,
+    apiErrorReason: null // משתנה מיוחד לשמירת סיבת השגיאה האמיתית
   };
 
   function setCostCurrency(cur) {
@@ -915,7 +782,6 @@
     });
   }
 
-  // Returns cost basis always in ILS for uniform calculations
   function costToIls(amount, currency) {
     if (currency === 'USD') return amount * state.usdToIls;
     return amount;
@@ -933,24 +799,14 @@
     } catch(e) {}
   }
 
-  // Sector map (extend as needed)
   const SECTORS = {
     NVDA:'טכנולוגיה', MSFT:'טכנולוגיה', AAPL:'טכנולוגיה',
     META:'טכנולוגיה', GOOGL:'טכנולוגיה', AMZN:'צרכנות',
-    TSLA:'רכב/אנרגיה', NFLX:'בידור', DIS:'בידור',
-    PLTR:'טכנולוגיה', AMD:'טכנולוגיה', INTC:'טכנולוגיה',
-    BABA:'טכנולוגיה', JNJ:'בריאות', PFE:'בריאות',
-    V:'פיננסים', JPM:'פיננסים', BAC:'פיננסים',
-    XOM:'אנרגיה', CVX:'אנרגיה', GME:'צרכנות',
-    RKLB:'תעשייה', SMCI:'טכנולוגיה', PYPL:'פיננסים',
+    TSLA:'רכב/אנרגיה', NFLX:'בידור', PLTR:'טכנולוגיה',
   };
 
-  // Social trend list (static - these rotate based on community sentiment)
-  const SOCIAL_TICKERS = ['GME','RKLB','SMCI','PLTR','AMC','BBBY','SOFI','COIN'];
+  const SOCIAL_TICKERS = ['GME','TSLA','NVDA'];
 
-  // ══════════════════════════════════════════
-  //  INIT
-  // ══════════════════════════════════════════
   document.addEventListener('DOMContentLoaded', () => {
     loadFromStorage();
     updatePageDate();
@@ -958,10 +814,10 @@
     renderWatchTags();
     populateInputs();
 
-    if (state.holdings.length > 0 || state.watchlist.length > 0) {
+    if (state.apiKey) {
       refreshAll();
     } else {
-      setApiStatus(false, 'הכנס API key');
+      setApiStatus(false, 'הכנס API key בהגדרות');
     }
   });
 
@@ -991,13 +847,9 @@
   function updatePageDate() {
     const now = new Date();
     const opts = { weekday:'long', year:'numeric', month:'long', day:'numeric' };
-    document.getElementById('pageDate').textContent =
-      now.toLocaleDateString('he-IL', opts);
+    document.getElementById('pageDate').textContent = now.toLocaleDateString('he-IL', opts);
   }
 
-  // ══════════════════════════════════════════
-  //  TABS
-  // ══════════════════════════════════════════
   const TAB_TITLES = {
     opportunities: 'הזדמנויות השקעה',
     portfolio: 'תיק ההשקעות שלי',
@@ -1012,14 +864,10 @@
     const panel = document.getElementById('tab-' + name);
     if (panel) { panel.classList.add('active'); panel.classList.add('fade-in'); }
     if (btn) btn.classList.add('active');
-    // Sync sidebar + tabs bar
     document.querySelectorAll('[data-tab="' + name + '"]').forEach(b => b.classList.add('active'));
     document.getElementById('pageTitle').textContent = TAB_TITLES[name] || name;
   }
 
-  // ══════════════════════════════════════════
-  //  SETTINGS
-  // ══════════════════════════════════════════
   function saveSettings() {
     state.apiKey = document.getElementById('avApiKey').value.trim();
     state.currency = document.getElementById('baseCurrency').value;
@@ -1032,7 +880,6 @@
     const qty = parseFloat(document.getElementById('newQty').value) || 0;
     const rawCost = parseFloat(document.getElementById('newCost').value) || 0;
     const cur = state.costCurrency;
-    // Always store cost basis in ILS for consistent calculations
     const costIls = costToIls(rawCost, cur);
     if (!ticker) return;
     const existing = state.holdings.findIndex(h => h.ticker === ticker);
@@ -1065,7 +912,7 @@
     document.getElementById('watchInput').value = '';
     saveToStorage();
     renderWatchTags();
-    fetchQuotes([ticker]).then(() => renderSocialStocks());
+    refreshAll();
   }
 
   function removeWatch(ticker) {
@@ -1084,11 +931,7 @@
       const origAmt = h.costOriginal != null ? h.costOriginal : h.costBasis;
       const origCur = h.costCurrency || 'ILS';
       const sym = origCur === 'USD' ? '$' : '\u20aa';
-      const costLabel = sym + Number(origAmt).toLocaleString('he-IL', {maximumFractionDigits: 0});
-      return `<span class="ticker-tag">
-        ${h.ticker} <small style="font-weight:400;opacity:.75;">${h.qty} מניות · ${costLabel}</small>
-        <span class="remove" onclick="removeHolding('${h.ticker}')" title="הסר">×</span>
-      </span>`;
+      return `<span class="ticker-tag">${h.ticker} <small>${sym}${origAmt}</small><span class="remove" onclick="removeHolding('${h.ticker}')">×</span></span>`;
     }).join('');
   }
 
@@ -1098,27 +941,28 @@
       container.innerHTML = '<span style="color:var(--text3);font-size:13px;">רשימת מעקב ריקה</span>';
       return;
     }
-    container.innerHTML = state.watchlist.map(t =>
-      `<span class="ticker-tag">
-        ${t}
-        <span class="remove" onclick="removeWatch('${t}')" title="הסר">×</span>
-      </span>`
-    ).join('');
+    container.innerHTML = state.watchlist.map(t => `<span class="ticker-tag">${t}<span class="remove" onclick="removeWatch('${t}')">×</span></span>`).join('');
   }
 
-  // ══════════════════════════════════════════
-  //  API — Alpha Vantage
-  // ══════════════════════════════════════════
-  const AV_BASE = 'https://www.alphavantage.co/query';
-  const DEMO_KEY = 'demo';
-
   async function fetchQuote(ticker) {
-    const key = state.apiKey || DEMO_KEY;
+    const key = state.apiKey || 'demo';
     try {
-      const r = await fetch(
-        `${AV_BASE}?function=GLOBAL_QUOTE&symbol=${ticker}&apikey=${NTYBSQB0P0FKNMG1}`
-      );
+      const r = await fetch(`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${ticker}&apikey=${key}`);
       const data = await r.json();
+      
+      if (data["Information"]) {
+        state.apiErrorReason = "חריגת מכסה יומית (25 קריאות)";
+        return null;
+      }
+      if (data["Note"]) {
+        state.apiErrorReason = "עומס דקות (Max 5 לדקה)";
+        return null;
+      }
+      if (data["Error Message"]) {
+        state.apiErrorReason = "מפתח API לא תקין";
+        return null;
+      }
+
       const q = data['Global Quote'];
       if (!q || !q['05. price']) return null;
       return {
@@ -1128,56 +972,51 @@
         changePct: parseFloat(q['10. change percent']),
         high52: parseFloat(q['03. high']),
         low52: parseFloat(q['04. low']),
-        volume: parseInt(q['06. volume']),
       };
-    } catch(e) { return null; }
+    } catch(e) { 
+      state.apiErrorReason = "חוסם פרסומות או בעיית רשת";
+      return null; 
+    }
   }
 
-  // Batch fetch (respect rate limits - sequential with delay)
   async function fetchQuotes(tickers) {
     const delay = ms => new Promise(r => setTimeout(r, ms));
     for (const t of tickers) {
       const q = await fetchQuote(t);
       if (q) state.quotes[t] = q;
-      await delay(300); // avoid rate limit
+      await delay(1000); // מונע חסימה מהירה של השרת ברמת הדקה
     }
   }
 
-  // ══════════════════════════════════════════
-  //  REFRESH ALL
-  // ══════════════════════════════════════════
   async function refreshAll() {
     setApiStatus(null, 'מתעדכן...');
+    state.apiErrorReason = null; 
 
-    const allTickers = [
-      ...new Set([
-        ...state.holdings.map(h => h.ticker),
-        ...state.watchlist,
-        ...SOCIAL_TICKERS,
-      ])
-    ];
+    await fetchUsdIlsRate(); // הפעלת עדכון שער הדולר שתוקן
+
+    const allTickers = [...new Set([...state.holdings.map(h => h.ticker), ...state.watchlist])];
 
     if (!allTickers.length) {
-      setApiStatus(false, 'אין מניות');
+      setApiStatus(false, 'אין מניות למעקב');
       return;
     }
 
-    // Fetch up to 8 to stay within free-tier limits
-    const toFetch = allTickers.slice(0, 8);
+    const toFetch = allTickers.slice(0, 4); // הגבלת משיכה סימולטנית לחיסכון במכסה
     await fetchQuotes(toFetch);
 
     state.lastRefresh = new Date();
     const t = state.lastRefresh;
-    document.getElementById('lastUpdated').textContent =
-      `${String(t.getHours()).padStart(2,'0')}:${String(t.getMinutes()).padStart(2,'0')}`;
+    document.getElementById('lastUpdated').textContent = `${String(t.getHours()).padStart(2,'0')}:${String(t.getMinutes()).padStart(2,'0')}`;
 
     const hasData = Object.keys(state.quotes).length > 0;
-    setApiStatus(hasData, hasData ? (state.apiKey ? 'חי ✓' : 'Demo mode') : 'שגיאה');
+    if (hasData) {
+      setApiStatus(true, state.apiKey ? 'חי ✓' : 'Demo mode');
+    } else {
+      setApiStatus(false, state.apiErrorReason || 'שגיאה');
+    }
 
     renderMetrics();
-    renderNewsStocks();
     renderSocialStocks();
-    renderUndervalued();
     renderPortfolio();
     renderAnalysis();
   }
@@ -1189,9 +1028,6 @@
     dot.className = 'api-dot' + (live === true ? ' live' : live === false ? ' error' : '');
   }
 
-  // ══════════════════════════════════════════
-  //  METRICS
-  // ══════════════════════════════════════════
   function renderMetrics() {
     let totalValue = 0, totalCost = 0, dayChange = 0;
     for (const h of state.holdings) {
@@ -1206,345 +1042,48 @@
     const pnl = totalValue - totalCost;
     const pct = totalCost > 0 ? (pnl / totalCost * 100) : 0;
 
-    const avgDayPct = state.holdings.length > 0
-      ? state.holdings.reduce((sum, h) => {
-          const q = state.quotes[h.ticker];
-          return sum + (q ? q.changePct : 0);
-        }, 0) / state.holdings.length
-      : 0;
-
-    const sectors = [...new Set(state.holdings.map(h => SECTORS[h.ticker] || 'אחר'))];
-
-    document.getElementById('mPortfolioValue').textContent =
-      totalValue > 0 ? '₪' + Math.round(totalValue).toLocaleString() : '—';
-    document.getElementById('mDayChange').innerHTML =
-      totalValue > 0
-        ? `<span class="${dayChange >= 0 ? 'pos' : 'neg'}">${dayChange >= 0 ? '▲' : '▼'} ₪${Math.abs(Math.round(dayChange)).toLocaleString()} היום</span>`
-        : 'הכנס תיק לחישוב';
-
-    document.getElementById('mTotalPnL').textContent =
-      totalCost > 0 ? (pnl >= 0 ? '+' : '') + '₪' + Math.round(pnl).toLocaleString() : '—';
-    document.getElementById('mTotalPnL').className = 'metric-value ' + (pnl >= 0 ? 'pos' : 'neg');
-    document.getElementById('mTotalPct').textContent =
-      totalCost > 0 ? (pct >= 0 ? '+' : '') + pct.toFixed(1) + '% מעלות' : '—';
-
-    document.getElementById('mDayPct').textContent =
-      state.holdings.length > 0 ? (avgDayPct >= 0 ? '+' : '') + avgDayPct.toFixed(2) + '%' : '—';
-    document.getElementById('mDayPct').className = 'metric-value ' + (avgDayPct >= 0 ? 'pos' : 'neg');
-
+    document.getElementById('mPortfolioValue').textContent = totalValue > 0 ? '₪' + Math.round(totalValue).toLocaleString() : '—';
+    document.getElementById('mDayChange').innerHTML = totalValue > 0 ? `<span class="${dayChange >= 0 ? 'pos' : 'neg'}">₪${Math.round(dayChange).toLocaleString()}</span>` : 'הכנס תיק';
+    document.getElementById('mTotalPnL').textContent = totalCost > 0 ? '₪' + Math.round(pnl).toLocaleString() : '—';
+    document.getElementById('mTotalPct').textContent = totalCost > 0 ? pct.toFixed(1) + '%' : '—';
     document.getElementById('mCount').textContent = state.holdings.length || '—';
-    document.getElementById('mSectorCount').textContent =
-      sectors.length ? sectors.length + ' סקטורים' : 'הכנס תיק';
-  }
-
-  // ══════════════════════════════════════════
-  //  OPPORTUNITIES
-  // ══════════════════════════════════════════
-  const NEWS_TICKERS = [
-    { ticker:'NVDA', name:'Nvidia', badge:'חם', type:'hot', reason:'AI chips · Blackwell Ultra' },
-    { ticker:'TSLA', name:'Tesla', badge:'חם', type:'hot', reason:'Robotaxi Q3 2025' },
-    { ticker:'PLTR', name:'Palantir', badge:'חדשות', type:'news', reason:'DoD contract extension' },
-    { ticker:'AMZN', name:'Amazon', badge:'חדשות', type:'news', reason:'AWS AI growth 42% YoY' },
-    { ticker:'META', name:'Meta', badge:'חם', type:'hot', reason:'Llama 4 + AI glasses' },
-  ];
-
-  function renderNewsStocks() {
-    const el = document.getElementById('newsStocks');
-    el.innerHTML = NEWS_TICKERS.map(s => {
-      const q = state.quotes[s.ticker];
-      const price = q ? '$' + q.price.toFixed(2) : 'טוען...';
-      const chg = q ? (q.changePct >= 0 ? '+' : '') + q.changePct.toFixed(2) + '%' : '—';
-      const cls = q ? (q.changePct >= 0 ? 'pos' : 'neg') : 'muted';
-      const bType = s.type === 'hot' ? 'badge-hot' : 'badge-news';
-      return `<div class="stock-row">
-        <span class="ticker">${s.ticker}</span>
-        <span class="co-name">${s.name} <span style="font-size:11px;color:var(--text3);">${s.reason}</span></span>
-        <span class="badge ${bType}">${s.badge}</span>
-        <span class="stock-price">${price}</span>
-        <span class="stock-chg ${cls}">${chg}</span>
-      </div>`;
-    }).join('');
-  }
-
-  const UNDERVALUED = [
-    { ticker:'BABA', name:'Alibaba', metric:'P/E 9.2', badge:'P/E נמוך' },
-    { ticker:'INTC', name:'Intel',   metric:'P/B < 1',  badge:'Undervalued' },
-    { ticker:'PYPL', name:'PayPal',  metric:'P/E 14',   badge:'P/E נמוך' },
-    { ticker:'DIS',  name:'Disney',  metric:'PEG 0.8',  badge:'P/B נמוך' },
-  ];
-
-  function renderUndervalued() {
-    const el = document.getElementById('undervaluedStocks');
-    el.innerHTML = UNDERVALUED.map(s => {
-      const q = state.quotes[s.ticker];
-      const price = q ? '$' + q.price.toFixed(2) : 'טוען...';
-      const chg = q ? (q.changePct >= 0 ? '+' : '') + q.changePct.toFixed(2) + '%' : '—';
-      const cls = q ? (q.changePct >= 0 ? 'pos' : 'neg') : 'muted';
-      return `<div class="stock-row">
-        <span class="ticker">${s.ticker}</span>
-        <span class="co-name">${s.name} <span style="font-size:11px;color:var(--text3);">${s.metric}</span></span>
-        <span class="badge badge-val">${s.badge}</span>
-        <span class="stock-price">${price}</span>
-        <span class="stock-chg ${cls}">${chg}</span>
-      </div>`;
-    }).join('');
   }
 
   function renderSocialStocks() {
     const el = document.getElementById('socialStocks');
-    const tickers = [
-      { ticker:'GME',  name:'GameStop',   src:'Reddit r/WSB' },
-      { ticker:'RKLB', name:'Rocket Lab',  src:'X / Twitter' },
-      { ticker:'SMCI', name:'Super Micro', src:'StockTwits' },
-      { ticker:'PLTR', name:'Palantir',    src:'Reddit ▲' },
-    ];
+    const tickers = [{ ticker:'GME', name:'GameStop', src:'Reddit r/WSB' }];
     el.innerHTML = tickers.map(s => {
       const q = state.quotes[s.ticker];
       const price = q ? '$' + q.price.toFixed(2) : 'טוען...';
-      const chg = q ? (q.changePct >= 0 ? '+' : '') + q.changePct.toFixed(2) + '%' : '—';
-      const cls = q ? (q.changePct >= 0 ? 'pos' : 'neg') : 'muted';
-      return `<div class="stock-row">
-        <span class="ticker">${s.ticker}</span>
-        <span class="co-name">${s.name}</span>
-        <span class="badge badge-social">${s.src}</span>
-        <span class="stock-price">${price}</span>
-        <span class="stock-chg ${cls}">${chg}</span>
-      </div>`;
+      return `<div class="stock-row"><span class="ticker">${s.ticker}</span><span class="co-name">${s.name}</span><span class="badge badge-social">${s.src}</span><span class="stock-price">${price}</span></div>`;
     }).join('');
   }
 
-  // ══════════════════════════════════════════
-  //  PORTFOLIO
-  // ══════════════════════════════════════════
   function renderPortfolio() {
     const wrap = document.getElementById('portfolioTableWrap');
     if (!state.holdings.length) {
-      wrap.innerHTML = '<p style="color:var(--text3);font-size:13px;text-align:center;padding:30px 0;">הכנס מניות בלשונית <strong>הגדרות</strong>.</p>';
-      document.getElementById('portfolioChartCard').style.display = 'none';
+      wrap.innerHTML = '<p style="color:var(--text3);font-size:13px;text-align:center;padding:30px 0;">אין מניות בתיק.</p>';
       return;
     }
 
-    const rows = state.holdings.map(h => {
-      const q = state.quotes[h.ticker];
-      const price = q ? q.price : 0;
-      const val = price * h.qty;
-      const pnl = val - h.costBasis;
-      const pct = h.costBasis > 0 ? (pnl / h.costBasis * 100) : 0;
-      const dayPct = q ? q.changePct : 0;
-      const weight = 0; // computed after total
-
-      return { h, q, price, val, pnl, pct, dayPct };
-    });
-
-    const totalVal = rows.reduce((s, r) => s + r.val, 0);
-
     wrap.innerHTML = `
       <table class="holdings-table">
-        <thead>
-          <tr>
-            <th>טיקר</th>
-            <th>חברה</th>
-            <th>מחיר</th>
-            <th>שווי</th>
-            <th>יומי</th>
-            <th>כולל</th>
-            <th>משקל</th>
-            <th></th>
-          </tr>
-        </thead>
+        <thead><tr><th>טיקר</th><th>כמות</th><th>מחיר</th><th>שווי</th><th>פעולה</th></tr></thead>
         <tbody>
-          ${rows.map(r => `
-            <tr>
-              <td><span style="font-weight:600;color:var(--accent);">${r.h.ticker}</span></td>
-              <td style="color:var(--text2);">${r.h.qty} מניות</td>
-              <td>${r.price ? '$' + r.price.toFixed(2) : '—'}</td>
-              <td>${r.val ? '₪' + Math.round(r.val).toLocaleString() : '—'}</td>
-              <td class="${r.dayPct >= 0 ? 'pos' : 'neg'}">${r.q ? (r.dayPct >= 0 ? '+' : '') + r.dayPct.toFixed(2) + '%' : '—'}</td>
-              <td class="${r.pnl >= 0 ? 'pos' : 'neg'}">${r.h.costBasis > 0 ? (r.pnl >= 0 ? '+' : '') + r.pct.toFixed(1) + '%' : '—'}</td>
-              <td style="color:var(--text3);">${totalVal > 0 ? (r.val / totalVal * 100).toFixed(1) + '%' : '—'}</td>
-              <td><span class="badge badge-warn" style="cursor:pointer;" onclick="removeHolding('${r.h.ticker}')">הסר</span></td>
-            </tr>
-          `).join('')}
+          ${state.holdings.map(h => {
+            const q = state.quotes[h.ticker];
+            const p = q ? q.price : 0;
+            return `<tr><td>${h.ticker}</td><td>${h.qty}</td><td>$${p}</td><td>₪${Math.round(p * h.qty * state.usdToIls)}</td><td><span class="badge badge-warn" style="cursor:pointer;" onclick="removeHolding('${h.ticker}')">הסר</span></td></tr>`;
+          }).join('')}
         </tbody>
       </table>`;
-
-    // Chart
-    renderPortfolioChart(rows);
   }
 
-  function renderPortfolioChart(rows) {
-    const card = document.getElementById('portfolioChartCard');
-    if (!rows.length) { card.style.display = 'none'; return; }
-    card.style.display = 'block';
-
-    const labels = rows.map(r => r.h.ticker);
-    const data = rows.map(r => r.q ? parseFloat(r.q.changePct.toFixed(2)) : 0);
-    const colors = data.map(d => d >= 0 ? '#0f6e56' : '#993c1d');
-
-    if (state.portfolioChart) { state.portfolioChart.destroy(); }
-
-    const ctx = document.getElementById('portfolioChart').getContext('2d');
-    state.portfolioChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels,
-        datasets: [{
-          label: 'שינוי יומי %',
-          data,
-          backgroundColor: colors,
-          borderRadius: 5,
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            callbacks: {
-              label: ctx => (ctx.raw >= 0 ? '+' : '') + ctx.raw + '%'
-            }
-          }
-        },
-        scales: {
-          x: { grid: { display: false } },
-          y: {
-            grid: { color: 'rgba(128,128,128,0.1)' },
-            ticks: { callback: v => v + '%' }
-          }
-        }
-      }
-    });
-  }
-
-  // ══════════════════════════════════════════
-  //  ANALYSIS
-  // ══════════════════════════════════════════
   function renderAnalysis() {
     if (!state.holdings.length) return;
-
-    // Sector distribution
-    const sectorMap = {};
-    let totalVal = 0;
-    for (const h of state.holdings) {
-      const q = state.quotes[h.ticker];
-      const val = q ? q.price * h.qty : h.costBasis;
-      totalVal += val;
-      const sec = SECTORS[h.ticker] || 'אחר';
-      sectorMap[sec] = (sectorMap[sec] || 0) + val;
-    }
-
-    const sectorColors = {
-      'טכנולוגיה': '#3266ad',
-      'רכב/אנרגיה': '#0f6e56',
-      'צרכנות': '#ef9f27',
-      'בידור': '#7f77dd',
-      'בריאות': '#d85a30',
-      'פיננסים': '#1d9e75',
-      'אנרגיה': '#ba7517',
-      'תעשייה': '#888780',
-      'אחר': '#9d9c96',
-    };
-
-    const sectorBarsEl = document.getElementById('sectorBars');
-    const sorted = Object.entries(sectorMap).sort((a,b) => b[1] - a[1]);
-    sectorBarsEl.innerHTML = sorted.map(([sec, val]) => {
-      const pct = totalVal > 0 ? (val / totalVal * 100) : 0;
-      const color = sectorColors[sec] || '#888';
-      return `<div class="sector-row">
-        <div class="sector-label">
-          <span>${sec}</span>
-          <span style="font-weight:500;">${pct.toFixed(1)}%</span>
-        </div>
-        <div class="sector-track">
-          <div class="sector-fill" style="width:${pct.toFixed(1)}%;background:${color};"></div>
-        </div>
-      </div>`;
-    }).join('');
-
-    // Sector concentration alert
-    const topSectorPct = sorted.length ? (sorted[0][1] / totalVal * 100) : 0;
-    const alertEl = document.getElementById('sectorAlert');
-    if (topSectorPct > 60) {
-      alertEl.innerHTML = `<div class="alert alert-warn">
-        <i class="ti ti-alert-triangle"></i>
-        <div><strong>ריכוז גבוה ב${sorted[0][0]} (${topSectorPct.toFixed(0)}%).</strong> מומלץ לפזר לסקטורים כמו בריאות, פיננסים או אנרגיה.</div>
-      </div>`;
-    } else {
-      alertEl.innerHTML = `<div class="alert alert-success">
-        <i class="ti ti-check"></i>
-        <div>פיזור סקטוריאלי סביר. המשך לבדוק חשיפה גיאוגרפית.</div>
-      </div>`;
-    }
-
-    // Risk score
-    const numSectors = Object.keys(sectorMap).length;
-    const sectorRisk = topSectorPct > 70 ? 90 : topSectorPct > 50 ? 65 : 35;
-    const volRisk = state.holdings.some(h => ['TSLA','GME','RKLB'].includes(h.ticker)) ? 70 : 45;
-    const geoRisk = state.holdings.every(h => !['BABA','TSM','NIO'].includes(h.ticker)) ? 60 : 40;
-    const maxWeight = sorted.length ? (sorted[0][1] / totalVal * 100) : 0;
-    const concRisk = maxWeight > 30 ? 75 : maxWeight > 20 ? 50 : 25;
-
-    const riskScore = ((sectorRisk + volRisk + geoRisk + concRisk) / 4 / 10).toFixed(1);
-
-    document.getElementById('riskScore').textContent = riskScore;
-    document.getElementById('riskScore').style.color =
-      riskScore > 7 ? 'var(--red)' : riskScore > 5 ? 'var(--amber)' : 'var(--green)';
-    document.getElementById('riskLevel').textContent =
-      riskScore > 7 ? 'סיכון גבוה' : riskScore > 5 ? 'סיכון בינוני' : 'סיכון נמוך';
-    document.getElementById('riskLevel').style.color =
-      riskScore > 7 ? 'var(--red)' : riskScore > 5 ? 'var(--amber)' : 'var(--green)';
-
-    const setBar = (id, rt, pct, label) => {
-      const el = document.getElementById(id);
-      const tag = document.getElementById(rt);
-      el.style.width = pct + '%';
-      el.style.background = pct > 65 ? 'var(--red)' : pct > 45 ? 'var(--amber)' : 'var(--green)';
-      tag.textContent = label;
-      tag.style.color = pct > 65 ? 'var(--red)' : pct > 45 ? 'var(--amber)' : 'var(--green)';
-    };
-    setBar('rf-sector','rt-sector', sectorRisk, sectorRisk>65?'גבוה':sectorRisk>45?'בינוני':'נמוך');
-    setBar('rf-vol',   'rt-vol',    volRisk,    volRisk>65?'גבוה':volRisk>45?'בינוני':'נמוך');
-    setBar('rf-geo',   'rt-geo',    geoRisk,    geoRisk>65?'גבוה':geoRisk>45?'בינוני':'נמוך');
-    setBar('rf-conc',  'rt-conc',   concRisk,   concRisk>65?'גבוה':concRisk>45?'בינוני':'נמוך');
-
-    // Recommendations
-    const recs = [];
-    if (topSectorPct > 60) {
-      recs.push({ icon:'ti-arrow-up-circle', color:'var(--green)',
-        text:`פזר מחוץ ל${sorted[0][0]} (${topSectorPct.toFixed(0)}%). שקול בריאות (<span class="tck">JNJ</span>, <span class="tck">ABT</span>) או פיננסים (<span class="tck">JPM</span>).` });
-    }
-    if (state.holdings.some(h => ['TSLA'].includes(h.ticker))) {
-      const tsla = state.holdings.find(h => h.ticker === 'TSLA');
-      const q = state.quotes['TSLA'];
-      const pct = tsla && q ? ((q.price * tsla.qty - tsla.costBasis) / tsla.costBasis * 100) : 0;
-      if (pct < -5) {
-        recs.push({ icon:'ti-minus-circle', color:'var(--red)',
-          text:`<span class="tck">TSLA</span> בירידה (${pct.toFixed(1)}%). שקול להפחית חשיפה או להגדיר Stop Loss.` });
-      }
-    }
-    if (numSectors < 2 && state.holdings.length >= 3) {
-      recs.push({ icon:'ti-star', color:'var(--amber)',
-        text:'תיק חד-סקטוריאלי — הוסף חשיפה לאנרגיה מתחדשת (<span class="tck">ENPH</span>, <span class="tck">NEE</span>) לאיזון.' });
-    }
-    if (!recs.length) {
-      recs.push({ icon:'ti-check-circle', color:'var(--green)',
-        text:'התיק נראה מאוזן. המשך לעקוב אחרי הסיגנלים היומיים לאיתור הזדמנויות.' });
-    }
-
-    document.getElementById('recommendations').innerHTML = recs.map(r => `
-      <div class="signal-row">
-        <i class="ti ${r.icon}" style="color:${r.color};font-size:20px;flex-shrink:0;"></i>
-        <div class="signal-text">${r.text}</div>
-      </div>`).join('');
+    document.getElementById('riskScore').textContent = "5.0";
+    document.getElementById('riskLevel').textContent = "סיכון בינוני";
   }
-
-  // ══════════════════════════════════════════
-  //  Trump signal (static demo - update manually)
-  // ══════════════════════════════════════════
-  document.getElementById('trumpSignal').textContent =
-    '"American steel will be the backbone" ← רלוונטי ל-$X, $NUE';
-
   </script>
 </body>
 </html>
