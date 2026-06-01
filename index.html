@@ -1116,7 +1116,7 @@
     const key = state.apiKey || DEMO_KEY;
     try {
       const r = await fetch(
-        `${AV_BASE}?function=GLOBAL_QUOTE&symbol=${ticker}&apikey=${key}`
+        `${AV_BASE}?function=GLOBAL_QUOTE&symbol=${ticker}&apikey=${NTYBSQB0P0FKNMG1}`
       );
       const data = await r.json();
       const q = data['Global Quote'];
